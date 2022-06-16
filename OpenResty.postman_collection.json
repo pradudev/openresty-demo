@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "030da597-891e-49eb-9ad7-7dd601e8408d",
+		"name": "OpenResty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Upload file",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-length": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Transfer-Encoding",
+						"value": "Chunked",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Name",
+							"value": "Pradeep",
+							"type": "default"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/ChouhaP/OneDrive - Nintex/Pictures/devops-cycle.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/upload_files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"upload_files"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

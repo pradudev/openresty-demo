@@ -1,20 +1,15 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+To demonstrate how to use openresty(nginx + lua engine) as a reverse-proxy  
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Internal projects
+This repo contains three projects
+1. proxy : this is the openresty based proxy. This listen on port 8080
+2. backend-app : this is a node.js based API application with a GET and a POST endpoints. This listen on port 3000
+3. client-app: this is a node.js based app used to make HTTP calls to the proxy app
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# How to run
+The proxy and the backend-app run as Docker container using Docker-Compose
+1. docker-compose build
+2. docker-compose up
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+**You can use the Postman collection from the repo to call the APIs**
