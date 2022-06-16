@@ -1,0 +1,21 @@
+version: '3'
+services:
+  proxy:
+    image: openresty-proxy
+    build:
+      context: proxy
+      dockerfile: Dockerfile  
+    environment:
+      BACKEND_APP_PORT: 3000
+    ports:
+      - "8080:8080"  
+
+  backend-app:
+    image: expressjs-app
+    build:
+      context: backend-app
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend-app/uploads:/app/uploads
+    ports:
+     - "3000:3000" 
